@@ -12,10 +12,10 @@ class ONLINE3 {
 
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
-                // Classic magic square formula (Siamese method converted to formula)
+                
                 a[i][j] = (n*((i+j+(n/2))%n) + ((i+2*j+1)%n) + 1);
 
-                // For classic orientation, rotate 180 degrees
+                
                 a[i][j] = n*n + 1 - a[i][j];
             }
         }
@@ -31,3 +31,4 @@ class ONLINE3 {
     }
 }
     
+
