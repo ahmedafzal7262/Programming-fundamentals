@@ -1,0 +1,33 @@
+import java.util.Scanner;
+
+class ONLINE3 {
+    public static void main(String[] args) {
+        Scanner keyb = new Scanner(System.in);
+        System.out.println("Enter the size of the matrix (odd number):");
+        int n = keyb.nextInt();
+
+        
+
+        int[][] a = new int[n][n];
+
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                // Classic magic square formula (Siamese method converted to formula)
+                a[i][j] = (n*((i+j+(n/2))%n) + ((i+2*j+1)%n) + 1);
+
+                // For classic orientation, rotate 180 degrees
+                a[i][j] = n*n + 1 - a[i][j];
+            }
+        }
+
+        System.out.println("Magic Square:");
+
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                System.out.print(a[i][j] + "\t");
+            }
+            System.out.println();
+        }
+    }
+}
+    
