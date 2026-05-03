@@ -7,8 +7,8 @@ class SALESFILEHANDLING {
         Scanner inp;
         String dr;
 
-        String[] prodNames = new String[100];
-        double[] amounts = new double[100];
+        String[] prodNames = new String[300];
+        double[] amounts = new double[300];
         int cot = 0;
 
         try {
