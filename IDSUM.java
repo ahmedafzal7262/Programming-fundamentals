@@ -6,15 +6,15 @@ class IDSUM {
         File f1 = new File("c:\\temp\\sale.txt");
         Scanner inp;
         String dr;
-        String[] prodNames = new String[300];   // stores Rep IDs
+        String[] prodNames = new String[300];  
         double[] amounts = new double[300];
         int cot = 0;
 
         try {
             inp = new Scanner(f1);
-            dr = inp.nextLine(); // skip header line
+            dr = inp.nextLine();
             String[] parts;
-            String prodName;                    // holds Rep ID value
+            String id;                   
             double amt, uPrice, qty;
 
             while (inp.hasNextLine()) {
@@ -22,21 +22,21 @@ class IDSUM {
                 if (dr.trim().length() == 0) continue;
 
                 parts    = dr.split("\t");
-                prodName = parts[5];                        // Rep ID column
-                uPrice   = Double.parseDouble(parts[2]);    // Unit Price column
-                qty      = Double.parseDouble(parts[3]);    // Qty column
+                id = parts[5];                        
+                uPrice   = Double.parseDouble(parts[2]);    
+                qty      = Double.parseDouble(parts[3]);   
                 amt      = uPrice * qty;
 
                 boolean found = false;
                 for (int i = 0; i < cot; i++) {
-                    if (prodNames[i].equals(prodName)) {
+                    if (id[i].equals(id)) {
                         amounts[i] += amt;
                         found = true;
                         break;
                     }
                 }
                 if (!found) {
-                    prodNames[cot] = prodName;
+                    id[cot] = id;
                     amounts[cot]   = amt;
                     cot++;
                 }
@@ -46,7 +46,7 @@ class IDSUM {
         } finally {
             System.out.println("===== REP ID-WISE TOTAL SALES =====");
             for (int i = 0; i < cot; i++) {
-                System.out.println(prodNames[i] + " ---> " + amounts[i]);
+                System.out.println(id[i] + " ---> " + amounts[i]);
             }
         }
     }
