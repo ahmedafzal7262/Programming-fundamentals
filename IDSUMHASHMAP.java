@@ -12,9 +12,9 @@ class IDSUMHASHMAP {
 
         try {
             inp = new Scanner(f1);
-            dr = inp.nextLine(); // skip header line
+            dr = inp.nextLine(); 
             String[] parts;
-            String prodName;                   // holds Rep ID value
+            String id;                  
             double amt, uPrice, qty;
 
             while (inp.hasNextLine()) {
@@ -22,15 +22,15 @@ class IDSUMHASHMAP {
                 if (dr.trim().length() == 0) continue;
 
                 parts    = dr.split("\t");
-                prodName = parts[5];                      // Rep ID column
-                uPrice   = Double.parseDouble(parts[2]);  // Unit Price column
-                qty      = Double.parseDouble(parts[3]);  // Qty column
+                id = parts[5];                     
+                uPrice   = Double.parseDouble(parts[2]); 
+                qty      = Double.parseDouble(parts[3]);  
                 amt      = uPrice * qty;
 
-                if (salesMap.containsKey(prodName)) {
-                    salesMap.put(prodName, salesMap.get(prodName) + amt);
+                if (salesMap.containsKey(id)) {
+                    salesMap.put(prodName, salesMap.get(id) + amt);
                 } else {
-                    salesMap.put(prodName, amt);
+                    salesMap.put(id, amt);
                 }
             }
         } catch (Exception e) {
