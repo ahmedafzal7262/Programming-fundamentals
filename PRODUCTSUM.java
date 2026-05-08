@@ -23,9 +23,9 @@ class PRODCUTSUM {
                  
 
                 parts  = dr.split("\t");
-                prodName = parts[1];                        // Product column
-                uPrice   = Double.parseDouble(parts[2]);    // Unit Price column
-                qty      = Double.parseDouble(parts[3]);    // Qty column
+                prodName = parts[1];                        
+                uPrice   = Double.parseDouble(parts[2]);    
+                qty      = Double.parseDouble(parts[3]);   
                 amt      = uPrice * qty;
 
                 boolean found = false;
