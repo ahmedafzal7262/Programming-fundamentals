@@ -12,7 +12,7 @@ class PRODUCTSUMHASHMAP {
 
         try {
             inp = new Scanner(f1);
-            dr = inp.nextLine(); // skip header line
+            dr = inp.nextLine(); 
             String[] parts;
             String prodName;
             double amt, uPrice, qty;
@@ -22,9 +22,9 @@ class PRODUCTSUMHASHMAP {
                 if (dr.trim().length() == 0) continue;
 
                 parts    = dr.split("\t");
-                prodName = parts[1];                      // Product column
-                uPrice   = Double.parseDouble(parts[2]);  // Unit Price column
-                qty      = Double.parseDouble(parts[3]);  // Qty column
+                prodName = parts[1];                      
+                uPrice   = Double.parseDouble(parts[2]);  
+                qty      = Double.parseDouble(parts[3]);  
                 amt      = uPrice * qty;
 
                 if (salesMap.containsKey(prodName)) {
